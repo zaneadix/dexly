@@ -1,0 +1,15 @@
+{
+  "name": "dex",
+  "version": "",
+  "dependencies": {
+    "bootstrap-css-only": "*",
+
+    "angular": "*" ,
+    "angular-touch": "*",
+    "angular-cookies": "*",
+    "ngFx": "*",
+    "angular-ui-router": "*",
+    "restangular": "*"
+  }
+}
+

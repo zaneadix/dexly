@@ -1,0 +1,50 @@
+{
+  "name": "package",
+
+  "version": "0.0.0",
+
+  "dependencies": {
+    "express": "*",
+    "mongoose": "*",
+    "mongodb": "*",
+    "restler": "*",
+    "q": "*",
+    "lodash": "*",
+    "async": "*",
+
+    "jquery": "*",
+    "ampersand-state": "*",
+    "ampersand-model": "*",
+    "ampersand-view": "*",
+    "ampersand-rest-collection": "*",
+    "ampersand-subcollection" : "*",
+    "ampersand-router": "*",
+    "ampersand-events": "*",
+    "amp-extend": "*"
+  },
+
+  "devDependencies": {
+    "gulp": "*",
+    "gulp-bower": "*",
+    "gulp-jshint": "*",
+    "gulp-notify": "*",
+    "gulp-livereload": "*",
+    "gulp-nodemon": "*",
+    "gulp-plumber": "*",
+    "gulp-task-listing": "*",
+    "gulp-concat": "*",
+    "gulp-uglify": "*",
+    "gulp-sass": "*",
+
+    "morgan": "*",
+    "body-parser": "*",
+    "tiny-lr": "*",
+    "jshint-stylish": "*",
+
+    "browserify": "*",
+    "watchify": "*",
+    "jadeify": "*",
+    "vinyl-source-stream": "*"
+  }
+
+}

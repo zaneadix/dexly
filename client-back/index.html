@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html ng-app="dex">
+<head>
+  <meta charset='utf8'>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>dex</title>
+  <link rel="stylesheet" type="text/css" href="lib/bootstrap-css-only/css/bootstrap.css">
+  <link rel="stylesheet" href="styles/css/dex.css"/>
+</head>
+  <body>
+
+    <div class="hero-unit" ui-view></div>
+
+    <script src="lib/lodash/dist/lodash.js"></script>
+    <script src="lib/angular/angular.js"></script>
+    <script src="lib/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="lib/ngFx/dist/ngFx.js"></script>
+    <script src="lib/restangular/dist/restangular.js"></script>
+
+    <script src="app.js"></script>
+    <script src="common/filters/digit.filter.js"></script>
+    <script src="common/filters/starts_with.filter.js"></script>
+    <script src="components/main/main.js"></script>
+
+    <script src="components/registry/registry.js"></script>
+    <script src="components/registry/registry.service.js"></script>
+    <script src="components/registry/entry.directive.js"></script>
+
+  </body>
+</html>
+
+
+
