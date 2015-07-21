@@ -1,0 +1,14 @@
+{
+  "name": "dexly",
+  "version": "1.0.0",
+  "description": "A nice way to look at pokemon",
+  "main": " ",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.0"
+  }
+}

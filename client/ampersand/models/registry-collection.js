@@ -15,7 +15,7 @@ module.exports = RestCollection.extend({
 
     this.on('sort', function() {
 
-      this.models = this.models.slice(0,300);
+      this.models = this.models.slice(0,719);
     })
   },
 

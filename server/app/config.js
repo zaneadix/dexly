@@ -20,7 +20,7 @@ mongoose.connect(process.env.DB_URL || 'mongodb://localhost/dex', function(error
 
 module.exports = exports = function (app, express, routers) {
 
-  app.set('port', process.env.PORT || 9000);
+  app.set('port', process.env.PORT || 5000);
   app.set('base url', process.env.URL || 'http://localhost');
 
   app.use(morgan('dev'));

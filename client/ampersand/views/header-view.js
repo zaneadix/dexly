@@ -19,7 +19,7 @@ module.exports = View.extend({
 
     this.statement = $(this.queryByHook('statement'));
 
-    this.menuToggle = $(this.query('.menu-toggle'));
+    this.menuToggle = $(this.query('.icon'));
 
     this.nameFilter = this.query('input');
 
@@ -29,21 +29,19 @@ module.exports = View.extend({
   initializeMenu: function() {
 
     var header = this;
-    // var menu = this.menu;
     var menuState = 'open';
     var closedHeight = this.menu.height();
     var statementHeight = this.statement.height();
     var $window = $(window);
-    var speed = 1000;
+    var speed = 600;
 
     this.menu.css('height', $window.height());
     app.hero.css('marginTop', $window.height());
-    // app.hero.animate({'margin-top': $window.height()}, speed);
     window.app.toggleScroll();
 
-    this.menuToggle.on('click', function(e) {
+    this.menuToggle.on('click', function() {
 
-      e.preventDefault();
+      $(this).toggleClass('open');
 
       menuState === 'open' ? menuState = 'closed' : menuState = 'open';
 

@@ -95,7 +95,7 @@ function updateDocs (url, comparitor, model, callback) {
       var search = {}
       search[comparitor] = pulledDoc[comparitor]
 
-      // console.log(model.modelName);
+      console.log(model.modelName);
 
       model.findOne(search, function(error, storedDoc) {
 

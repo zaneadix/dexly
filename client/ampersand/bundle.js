@@ -152,7 +152,7 @@ module.exports = RestCollection.extend({
 
     this.on('sort', function() {
 
-      this.models = this.models.slice(0,300);
+      this.models = this.models.slice(0,719);
     })
   },
 
@@ -249,7 +249,7 @@ var buf = [];
 var jade_mixins = {};
 var jade_interp;
 
-buf.push("<div class=\"navbar navbar-default navbar-fixed-top container-fluid\"><div data-hook=\"menu\" class=\"menu\"><a class=\"menu-toggle\">toggle</a><input type=\"text\" placeholder=\"choose\" data-hook=\"nameFilter\" maxlength=\"12\"/><p data-hook=\"statement\" class=\"statement\">A nice way to look at Pokemon</p></div></div>");;return buf.join("");
+buf.push("<div data-hook=\"menu\" class=\"navbar navbar-default navbar-fixed-top container-fluid menu\"><span class=\"icon\"><span class=\"ball\"></span><span class=\"mag-glass\"></span></span><input type=\"text\" placeholder=\"choose\" data-hook=\"nameFilter\" maxlength=\"12\"/><a class=\"menu-toggle\">toggle</a><p data-hook=\"statement\" class=\"statement\">A nice way to look at Pokemon</p></div>");;return buf.join("");
 };
 },{"jade/runtime":"/Users/zane/zaneadix/apps/dex/node_modules/jade/runtime.js"}],"/Users/zane/zaneadix/apps/dex/client/ampersand/templates/pokemon-summary-template.jade":[function(require,module,exports){
 var jade = require("jade/runtime");
@@ -283,7 +283,7 @@ module.exports = View.extend({
 
     this.statement = $(this.queryByHook('statement'));
 
-    this.menuToggle = $(this.query('.menu-toggle'));
+    this.menuToggle = $(this.query('.icon'));
 
     this.nameFilter = this.query('input');
 
@@ -293,21 +293,19 @@ module.exports = View.extend({
   initializeMenu: function() {
 
     var header = this;
-    // var menu = this.menu;
     var menuState = 'open';
     var closedHeight = this.menu.height();
     var statementHeight = this.statement.height();
     var $window = $(window);
-    var speed = 1000;
+    var speed = 600;
 
     this.menu.css('height', $window.height());
     app.hero.css('marginTop', $window.height());
-    // app.hero.animate({'margin-top': $window.height()}, speed);
     window.app.toggleScroll();
 
-    this.menuToggle.on('click', function(e) {
+    this.menuToggle.on('click', function() {
 
-      e.preventDefault();
+      $(this).toggleClass('open');
 
       menuState === 'open' ? menuState = 'closed' : menuState = 'open';
 
@@ -1474,7 +1472,7 @@ module.exports = function createCallback(func, context, argCount) {
 },{}],"/Users/zane/zaneadix/apps/dex/node_modules/ampersand-events/node_modules/amp-extend/extend.js":[function(require,module,exports){
 arguments[4]["/Users/zane/zaneadix/apps/dex/node_modules/amp-extend/extend.js"][0].apply(exports,arguments)
 },{"amp-is-object":"/Users/zane/zaneadix/apps/dex/node_modules/ampersand-events/node_modules/amp-extend/node_modules/amp-is-object/is-object.js"}],"/Users/zane/zaneadix/apps/dex/node_modules/ampersand-events/node_modules/amp-extend/node_modules/amp-is-object/is-object.js":[function(require,module,exports){
-arguments[4]["/Users/zane/zaneadix/apps/dex/node_modules/ampersand-events/node_modules/amp-bind/node_modules/amp-is-object/is-object.js"][0].apply(exports,arguments)
+arguments[4]["/Users/zane/zaneadix/apps/dex/node_modules/amp-extend/node_modules/amp-is-object/is-object.js"][0].apply(exports,arguments)
 },{}],"/Users/zane/zaneadix/apps/dex/node_modules/ampersand-events/node_modules/amp-is-empty/is-empty.js":[function(require,module,exports){
 var isArray = require('amp-is-array');
 var isString = require('amp-is-string');
@@ -1595,7 +1593,7 @@ module.exports = function indexOf(arr, item, from) {
 },{"amp-is-number":"/Users/zane/zaneadix/apps/dex/node_modules/ampersand-events/node_modules/amp-keys/node_modules/amp-index-of/node_modules/amp-is-number/is-number.js"}],"/Users/zane/zaneadix/apps/dex/node_modules/ampersand-events/node_modules/amp-keys/node_modules/amp-index-of/node_modules/amp-is-number/is-number.js":[function(require,module,exports){
 arguments[4]["/Users/zane/zaneadix/apps/dex/node_modules/ampersand-events/node_modules/amp-is-empty/node_modules/amp-is-number/is-number.js"][0].apply(exports,arguments)
 },{}],"/Users/zane/zaneadix/apps/dex/node_modules/ampersand-events/node_modules/amp-keys/node_modules/amp-is-object/is-object.js":[function(require,module,exports){
-arguments[4]["/Users/zane/zaneadix/apps/dex/node_modules/ampersand-events/node_modules/amp-extend/node_modules/amp-is-object/is-object.js"][0].apply(exports,arguments)
+arguments[4]["/Users/zane/zaneadix/apps/dex/node_modules/amp-extend/node_modules/amp-is-object/is-object.js"][0].apply(exports,arguments)
 },{}],"/Users/zane/zaneadix/apps/dex/node_modules/ampersand-events/node_modules/amp-once/node_modules/amp-limit-calls/limit-calls.js":[function(require,module,exports){
 module.exports = function limitCalls(fn, times) {
     var memo;
@@ -5904,11 +5902,11 @@ Router.extend = classExtend;
 },{"./ampersand-history":"/Users/zane/zaneadix/apps/dex/node_modules/ampersand-router/ampersand-history.js","amp-extend":"/Users/zane/zaneadix/apps/dex/node_modules/ampersand-router/node_modules/amp-extend/extend.js","amp-is-function":"/Users/zane/zaneadix/apps/dex/node_modules/ampersand-router/node_modules/amp-is-function/is-function.js","amp-is-regexp":"/Users/zane/zaneadix/apps/dex/node_modules/ampersand-router/node_modules/amp-is-regexp/is-regexp.js","amp-result":"/Users/zane/zaneadix/apps/dex/node_modules/ampersand-router/node_modules/amp-result/result.js","ampersand-class-extend":"/Users/zane/zaneadix/apps/dex/node_modules/ampersand-router/node_modules/ampersand-class-extend/ampersand-class-extend.js","backbone-events-standalone":"/Users/zane/zaneadix/apps/dex/node_modules/ampersand-router/node_modules/backbone-events-standalone/index.js"}],"/Users/zane/zaneadix/apps/dex/node_modules/ampersand-router/node_modules/amp-bind/bind.js":[function(require,module,exports){
 arguments[4]["/Users/zane/zaneadix/apps/dex/node_modules/ampersand-events/node_modules/amp-bind/bind.js"][0].apply(exports,arguments)
 },{"amp-is-function":"/Users/zane/zaneadix/apps/dex/node_modules/ampersand-router/node_modules/amp-is-function/is-function.js","amp-is-object":"/Users/zane/zaneadix/apps/dex/node_modules/ampersand-router/node_modules/amp-bind/node_modules/amp-is-object/is-object.js"}],"/Users/zane/zaneadix/apps/dex/node_modules/ampersand-router/node_modules/amp-bind/node_modules/amp-is-object/is-object.js":[function(require,module,exports){
-arguments[4]["/Users/zane/zaneadix/apps/dex/node_modules/ampersand-events/node_modules/amp-keys/node_modules/amp-is-object/is-object.js"][0].apply(exports,arguments)
+arguments[4]["/Users/zane/zaneadix/apps/dex/node_modules/amp-extend/node_modules/amp-is-object/is-object.js"][0].apply(exports,arguments)
 },{}],"/Users/zane/zaneadix/apps/dex/node_modules/ampersand-router/node_modules/amp-extend/extend.js":[function(require,module,exports){
-arguments[4]["/Users/zane/zaneadix/apps/dex/node_modules/ampersand-events/node_modules/amp-extend/extend.js"][0].apply(exports,arguments)
+arguments[4]["/Users/zane/zaneadix/apps/dex/node_modules/amp-extend/extend.js"][0].apply(exports,arguments)
 },{"amp-is-object":"/Users/zane/zaneadix/apps/dex/node_modules/ampersand-router/node_modules/amp-extend/node_modules/amp-is-object/is-object.js"}],"/Users/zane/zaneadix/apps/dex/node_modules/ampersand-router/node_modules/amp-extend/node_modules/amp-is-object/is-object.js":[function(require,module,exports){
-arguments[4]["/Users/zane/zaneadix/apps/dex/node_modules/ampersand-router/node_modules/amp-bind/node_modules/amp-is-object/is-object.js"][0].apply(exports,arguments)
+arguments[4]["/Users/zane/zaneadix/apps/dex/node_modules/amp-extend/node_modules/amp-is-object/is-object.js"][0].apply(exports,arguments)
 },{}],"/Users/zane/zaneadix/apps/dex/node_modules/ampersand-router/node_modules/amp-is-function/is-function.js":[function(require,module,exports){
 arguments[4]["/Users/zane/zaneadix/apps/dex/node_modules/ampersand-events/node_modules/amp-bind/node_modules/amp-is-function/is-function.js"][0].apply(exports,arguments)
 },{}],"/Users/zane/zaneadix/apps/dex/node_modules/ampersand-router/node_modules/amp-is-regexp/is-regexp.js":[function(require,module,exports){
@@ -5934,7 +5932,7 @@ module.exports = function result(object, property, defaultValue) {
 },{"amp-is-function":"/Users/zane/zaneadix/apps/dex/node_modules/ampersand-router/node_modules/amp-is-function/is-function.js"}],"/Users/zane/zaneadix/apps/dex/node_modules/ampersand-router/node_modules/ampersand-class-extend/ampersand-class-extend.js":[function(require,module,exports){
 arguments[4]["/Users/zane/zaneadix/apps/dex/node_modules/ampersand-collection/node_modules/ampersand-class-extend/ampersand-class-extend.js"][0].apply(exports,arguments)
 },{"extend-object":"/Users/zane/zaneadix/apps/dex/node_modules/ampersand-router/node_modules/ampersand-class-extend/node_modules/extend-object/extend-object.js"}],"/Users/zane/zaneadix/apps/dex/node_modules/ampersand-router/node_modules/ampersand-class-extend/node_modules/extend-object/extend-object.js":[function(require,module,exports){
-arguments[4]["/Users/zane/zaneadix/apps/dex/node_modules/ampersand-rest-collection/node_modules/ampersand-collection-rest-mixin/node_modules/extend-object/extend-object.js"][0].apply(exports,arguments)
+arguments[4]["/Users/zane/zaneadix/apps/dex/node_modules/ampersand-collection/node_modules/extend-object/extend-object.js"][0].apply(exports,arguments)
 },{}],"/Users/zane/zaneadix/apps/dex/node_modules/ampersand-router/node_modules/backbone-events-standalone/backbone-events-standalone.js":[function(require,module,exports){
 arguments[4]["/Users/zane/zaneadix/apps/dex/node_modules/ampersand-collection/node_modules/backbone-events-standalone/backbone-events-standalone.js"][0].apply(exports,arguments)
 },{}],"/Users/zane/zaneadix/apps/dex/node_modules/ampersand-router/node_modules/backbone-events-standalone/index.js":[function(require,module,exports){
@@ -6724,9 +6722,9 @@ module.exports = function arrayNext(array, currentItem) {
 };
 
 },{}],"/Users/zane/zaneadix/apps/dex/node_modules/ampersand-state/node_modules/backbone-events-standalone/backbone-events-standalone.js":[function(require,module,exports){
-arguments[4]["/Users/zane/zaneadix/apps/dex/node_modules/ampersand-router/node_modules/backbone-events-standalone/backbone-events-standalone.js"][0].apply(exports,arguments)
+arguments[4]["/Users/zane/zaneadix/apps/dex/node_modules/ampersand-collection/node_modules/backbone-events-standalone/backbone-events-standalone.js"][0].apply(exports,arguments)
 },{}],"/Users/zane/zaneadix/apps/dex/node_modules/ampersand-state/node_modules/backbone-events-standalone/index.js":[function(require,module,exports){
-arguments[4]["/Users/zane/zaneadix/apps/dex/node_modules/ampersand-router/node_modules/backbone-events-standalone/index.js"][0].apply(exports,arguments)
+arguments[4]["/Users/zane/zaneadix/apps/dex/node_modules/ampersand-collection/node_modules/backbone-events-standalone/index.js"][0].apply(exports,arguments)
 },{"./backbone-events-standalone":"/Users/zane/zaneadix/apps/dex/node_modules/ampersand-state/node_modules/backbone-events-standalone/backbone-events-standalone.js"}],"/Users/zane/zaneadix/apps/dex/node_modules/ampersand-state/node_modules/key-tree-store/key-tree-store.js":[function(require,module,exports){
 function KeyTreeStore() {
     this.storage = {};
@@ -6769,7 +6767,7 @@ KeyTreeStore.prototype.get = function (keypath) {
 module.exports = KeyTreeStore;
 
 },{}],"/Users/zane/zaneadix/apps/dex/node_modules/ampersand-state/node_modules/underscore/underscore.js":[function(require,module,exports){
-arguments[4]["/Users/zane/zaneadix/apps/dex/node_modules/ampersand-rest-collection/node_modules/ampersand-collection-underscore-mixin/node_modules/underscore/underscore.js"][0].apply(exports,arguments)
+arguments[4]["/Users/zane/zaneadix/apps/dex/node_modules/ampersand-model/node_modules/underscore/underscore.js"][0].apply(exports,arguments)
 },{}],"/Users/zane/zaneadix/apps/dex/node_modules/ampersand-view/ampersand-view.js":[function(require,module,exports){
 ;if (typeof window !== "undefined") {  window.ampersand = window.ampersand || {};  window.ampersand["ampersand-view"] = window.ampersand["ampersand-view"] || [];  window.ampersand["ampersand-view"].push("7.2.0");}
 var State = require('ampersand-state');
@@ -7302,9 +7300,9 @@ CollectionView.extend = ampExtend;
 module.exports = CollectionView;
 
 },{"ampersand-class-extend":"/Users/zane/zaneadix/apps/dex/node_modules/ampersand-view/node_modules/ampersand-collection-view/node_modules/ampersand-class-extend/ampersand-class-extend.js","backbone-events-standalone":"/Users/zane/zaneadix/apps/dex/node_modules/ampersand-view/node_modules/ampersand-collection-view/node_modules/backbone-events-standalone/index.js","underscore":"/Users/zane/zaneadix/apps/dex/node_modules/ampersand-view/node_modules/underscore/underscore.js"}],"/Users/zane/zaneadix/apps/dex/node_modules/ampersand-view/node_modules/ampersand-collection-view/node_modules/ampersand-class-extend/ampersand-class-extend.js":[function(require,module,exports){
-arguments[4]["/Users/zane/zaneadix/apps/dex/node_modules/ampersand-router/node_modules/ampersand-class-extend/ampersand-class-extend.js"][0].apply(exports,arguments)
+arguments[4]["/Users/zane/zaneadix/apps/dex/node_modules/ampersand-collection/node_modules/ampersand-class-extend/ampersand-class-extend.js"][0].apply(exports,arguments)
 },{"extend-object":"/Users/zane/zaneadix/apps/dex/node_modules/ampersand-view/node_modules/ampersand-collection-view/node_modules/ampersand-class-extend/node_modules/extend-object/extend-object.js"}],"/Users/zane/zaneadix/apps/dex/node_modules/ampersand-view/node_modules/ampersand-collection-view/node_modules/ampersand-class-extend/node_modules/extend-object/extend-object.js":[function(require,module,exports){
-arguments[4]["/Users/zane/zaneadix/apps/dex/node_modules/ampersand-router/node_modules/ampersand-class-extend/node_modules/extend-object/extend-object.js"][0].apply(exports,arguments)
+arguments[4]["/Users/zane/zaneadix/apps/dex/node_modules/ampersand-collection/node_modules/extend-object/extend-object.js"][0].apply(exports,arguments)
 },{}],"/Users/zane/zaneadix/apps/dex/node_modules/ampersand-view/node_modules/ampersand-collection-view/node_modules/backbone-events-standalone/backbone-events-standalone.js":[function(require,module,exports){
 /**
  * Standalone extraction of Backbone.Events, no external dependency required.
@@ -7585,7 +7583,7 @@ arguments[4]["/Users/zane/zaneadix/apps/dex/node_modules/ampersand-router/node_m
 })(this);
 
 },{}],"/Users/zane/zaneadix/apps/dex/node_modules/ampersand-view/node_modules/ampersand-collection-view/node_modules/backbone-events-standalone/index.js":[function(require,module,exports){
-arguments[4]["/Users/zane/zaneadix/apps/dex/node_modules/ampersand-state/node_modules/backbone-events-standalone/index.js"][0].apply(exports,arguments)
+arguments[4]["/Users/zane/zaneadix/apps/dex/node_modules/ampersand-collection/node_modules/backbone-events-standalone/index.js"][0].apply(exports,arguments)
 },{"./backbone-events-standalone":"/Users/zane/zaneadix/apps/dex/node_modules/ampersand-view/node_modules/ampersand-collection-view/node_modules/backbone-events-standalone/backbone-events-standalone.js"}],"/Users/zane/zaneadix/apps/dex/node_modules/ampersand-view/node_modules/ampersand-dom-bindings/ampersand-dom-bindings.js":[function(require,module,exports){
 ;if (typeof window !== "undefined") {  window.ampersand = window.ampersand || {};  window.ampersand["ampersand-dom-bindings"] = window.ampersand["ampersand-dom-bindings"] || [];  window.ampersand["ampersand-dom-bindings"].push("3.3.3");}
 var Store = require('key-tree-store');
@@ -8466,7 +8464,7 @@ function match(el, selector) {
   return false;
 }
 },{}],"/Users/zane/zaneadix/apps/dex/node_modules/ampersand-view/node_modules/underscore/underscore.js":[function(require,module,exports){
-arguments[4]["/Users/zane/zaneadix/apps/dex/node_modules/ampersand-rest-collection/node_modules/ampersand-collection-rest-mixin/node_modules/ampersand-sync/node_modules/underscore/underscore.js"][0].apply(exports,arguments)
+arguments[4]["/Users/zane/zaneadix/apps/dex/node_modules/ampersand-model/node_modules/ampersand-sync/node_modules/underscore/underscore.js"][0].apply(exports,arguments)
 },{}],"/Users/zane/zaneadix/apps/dex/node_modules/browserify/node_modules/browser-resolve/empty.js":[function(require,module,exports){
 
 },{}],"/Users/zane/zaneadix/apps/dex/node_modules/browserify/node_modules/buffer/index.js":[function(require,module,exports){

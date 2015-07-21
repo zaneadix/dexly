@@ -8,4 +8,4 @@ var dex     = require('./app/dex.js'),
 dex.listen(port);
 console.log(log);
 
-// pokeapi.update();
+pokeapi.update();
