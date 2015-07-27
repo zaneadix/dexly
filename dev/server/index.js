@@ -1,3 +1,8 @@
-import app from './app/app.js';
+import app from './middle/middle';
+import syncData from './pokeapi/pokeapi';
 
-app.listen(app.get(port));
+// Launch server
+app.listen(app.get('port'));
+console.info('Check out ' + app.get('base url') + ':' + app.get('port'));
+
+syncData()

@@ -1,18 +1,16 @@
+// import live from 'connect-livereload';
+
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
 	value: true
 });
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
-var _express = require('express');
-
-var _express2 = _interopRequireDefault(_express);
-
-exports['default'] = function (app) {
+exports['default'] = function (app, express) {
 
 	app.set('port', 2000);
+
+	app.use(express['static'](__dirname + '/../../client'));
 };
 
 module.exports = exports['default'];

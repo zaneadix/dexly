@@ -16,7 +16,7 @@ var _config2 = _interopRequireDefault(_config);
 
 var app = (0, _express2['default'])();
 
-(0, _config2['default'])(app);
+(0, _config2['default'])(app, _express2['default']);
 
 exports['default'] = app;
 module.exports = exports['default'];
